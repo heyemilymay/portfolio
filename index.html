@@ -573,7 +573,13 @@
       border-right: none;
       border-bottom: 1px solid rgba(31,32,75,0.1);
     }
-    .sidebar-nav { flex-direction: row; flex-wrap: wrap; }
+    /* Keep the same vertical, one-per-line list as desktop (.sidebar-nav's base
+       flex-direction: column) instead of letting items wrap into a flowing paragraph —
+       that wrapped layout was Emily's "list them instead" feedback. Give the open list
+       its own top margin so it reads as one connected menu under the toggle rather than
+       floating apart from it (previously relied on 0 default gap, which read as an odd
+       empty pocket between the "Menu" button and "Home"). */
+    .sidebar-nav { margin-top: 14px; }
     .mobile-nav-toggle { display: inline-flex; }
     .sidebar-tagline, .sidebar-credential, .sidebar-nav, .sidebar-resume-link { display: none; }
     .site-sidebar.is-nav-open .sidebar-tagline,
